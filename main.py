@@ -12,9 +12,6 @@ def main():
     encuentros = {}
     activeMenu = True
 
-
-    
-
     while activeMenu:
         res = index.crearMenu()  # Mostrar el menú principal
         

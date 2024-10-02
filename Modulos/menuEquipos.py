@@ -4,7 +4,7 @@ import Modulos.allMenu as all
 import Modulos.utils.utils as ut
 import Modulos.utils.core as core
 contador = 1  # Contador global para asignar ID a los equipos registrados
-
+ligaRoute = 'data/torneo.json'
 def subMenuEquipo(equipos: dict):
     """
     Muestra el submenú de equipos y gestiona las opciones seleccionadas.
@@ -54,7 +54,9 @@ def regEquipo(eq: dict):
     equipo = pedirDatos()  # Obtener datos del equipo
     eq[str(contador).zfill(2)] = equipo  # Asignar ID al equipo
     contador += 1  # Incrementar contador para el próximo equipo
-    core.AddData('LigaBetplay', {('Equipos'):eq})
+    core.AddData(ligaRoute, {'LigaBetplay': {'Equipos': eq}})
+
+    
 
 def pedirDatos():
     """

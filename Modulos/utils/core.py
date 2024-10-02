@@ -13,26 +13,22 @@ def ReadFile():
     with open(MY_DATABASE,"r") as rf:
         return json.load(rf)
 
-def AddData(*param):
-    print(param)
-    with open(MY_DATABASE,"r+") as rwf:
+import json
 
-        data_file=json.load(rwf)
-        if (len(param) > 1):
-            try:
-                # print(param[0], "dddddd", param[1] )
-               
-                if(bool(data_file.get(param[0]).update(param[1]))):
-                    print("se supone que debe actualizar")
-                else: 
-                    print("no fue correcto")                
-            except AttributeError:
-                print("entra al error")
-            #     data_file.get(param[0]).update({param[1]:param[2]})
-            # data_file.update({param[0]:param[1]})
-        else:
-            print("entra al else")
-            data_file.update({param[0]})
+def AddData(*params):
+    data = list(params)
+    try:
+        with open(params[0], 'r') as file:
+            existing_data = json.load(file)
+    except FileNotFoundError:
+        existing_data = {}
+    
+    # Actualiza los datos existentes con los nuevos datos
+    existing_data.update(data[1])
+    
+    with open(params[0], 'w') as file:
+        json.dump(existing_data, file, indent=4)
+
 
 def checkFile(*param):
     data = list(param)
