@@ -10,7 +10,7 @@ def main():
     jugadores = {}
     encuentros = {}
     activeMenu = True
-    
+    #ya sirven los commits
     while activeMenu:
         res = index.crearMenu()  # Mostrar el menú principal
         
