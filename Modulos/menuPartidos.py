@@ -1,6 +1,6 @@
 # Author: mspg
 
-import Modulos.utils as ui
+import Modulos.utils.utils as ui
 import Modulos.allMenu as all
 from datetime import datetime
 

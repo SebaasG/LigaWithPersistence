@@ -1,8 +1,8 @@
 # Author: mspg
 
-import Modulos.utils as ut
 import Modulos.allMenu as all
-
+import Modulos.utils.utils as ut
+import Modulos.utils.core as core
 contador = 1  # Contador global para asignar ID a los equipos registrados
 
 def subMenuEquipo(equipos: dict):
@@ -21,6 +21,7 @@ def subMenuEquipo(equipos: dict):
                 # Opción para registrar un equipo
                 ut.limpiarConsola()
                 regEquipo(equipos)
+                
                 print("Se ha registrado correctamente su equipo.")
                 input("Presione cualquier tecla para continuar...")
                 ut.limpiarConsola()
@@ -53,6 +54,7 @@ def regEquipo(eq: dict):
     equipo = pedirDatos()  # Obtener datos del equipo
     eq[str(contador).zfill(2)] = equipo  # Asignar ID al equipo
     contador += 1  # Incrementar contador para el próximo equipo
+    core.AddData('LigaBetplay', {('Equipos'):eq})
 
 def pedirDatos():
     """

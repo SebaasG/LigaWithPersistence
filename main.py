@@ -4,13 +4,17 @@ import Modulos.menuPlantel as menuP
 import Modulos.menuPartidos as MenuPar
 import Modulos.menuResul as menuRes
 import Modulos.estadisticas as menuEstad
+import Modulos.utils.core as core
 
 def main():
     equipos = {}
     jugadores = {}
     encuentros = {}
     activeMenu = True
-    #ya sirven los commits
+
+
+    
+
     while activeMenu:
         res = index.crearMenu()  # Mostrar el menú principal
         
@@ -36,5 +40,31 @@ def main():
         elif res == 6:
             activeMenu = False 
     
-if __name__ == "__main__":
+
+
+
+
+if(__name__ == "__main__"):
+    
+    torneo = {
+        'LigaBetplay': {}
+    }
+    core.MY_DATABASE = 'data/torneo.json'
+    core.checkFile(torneo)
     main()
+    
+
+
+
+    # camper= {
+
+    #     'idx' : str(len(campus.get('campers'))+1).zfill(3),
+    #     'nombre' : 'Camper 1'
+    # }
+
+    # campus.get('campers').update({camper['idx']: camper})
+    # core.addData(campus)
+
+
+
+    
