@@ -13,21 +13,20 @@ def ReadFile():
     with open(MY_DATABASE,"r") as rf:
         return json.load(rf)
 
-import json
 
 def AddData(*params):
     data = list(params)
     try:
-        with open(params[0], 'r') as file:
-            existing_data = json.load(file)
+        with open(data[0], 'r') as file:
+            dataExist = json.load(file)
     except FileNotFoundError:
-        existing_data = {}
+        dataExist = {}
     
     # Actualiza los datos existentes con los nuevos datos
-    existing_data.update(data[1])
+    dataExist.update(data[1])
     
     with open(params[0], 'w') as file:
-        json.dump(existing_data, file, indent=4)
+        json.dump(dataExist, file, indent=4)
 
 
 def checkFile(*param):

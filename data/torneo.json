@@ -1,18 +1,10 @@
 {
     "LigaBetplay": {
         "Equipos": {
-            "01": {
-                "nombre": "millos",
-                "pj": 0,
-                "pg": 0,
-                "pp": 0,
-                "pe": 0,
-                "gf": 0,
-                "gc": 0,
-                "pt": 0
-            },
-            "02": {
-                "nombre": "nacional",
+            "3": {
+                "nombre": "rfg",
+                "jugadores": {},
+                "plantel": {},
                 "pj": 0,
                 "pg": 0,
                 "pp": 0,
@@ -22,6 +14,5 @@
                 "pt": 0
             }
         }
-        
     }
 }

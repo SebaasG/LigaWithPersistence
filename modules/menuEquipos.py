@@ -27,14 +27,17 @@ def subMenuEquipo(equipos: dict):
                 ut.limpiarConsola()
 
             elif opc == 2:
+                equipos = core.ReadFile()
                 # Opción para mostrar los equipos registrados
                 ut.limpiarConsola()
-                if not equipos:
+                if not equipos.get('LigaBetplay').get('Equipos'):
                     print("Aún no se han registrado equipos.")
                 else:
-                    print("Los siguientes son los equipos registrados:\n")
-                    print([a['nombre'] for a in equipos.values()])
+
+                    for key, value in equipos.get('LigaBetplay').get('Equipos').items():
+                        print(f"ID: {key}, Nombre: {value.get('nombre')}")
                 input("Presione cualquier tecla para continuar...")
+
                 ut.limpiarConsola()
 
             elif opc == 3:
@@ -50,13 +53,23 @@ def regEquipo(eq: dict):
     """
     Registra un nuevo equipo en el diccionario de equipos.
     """
-    global contador
+    equipos = core.ReadFile()
+    
+    if not equipos.get('LigaBetplay', {}).get('Equipos'):
+        contador = 1
+    else:
+       
+        contador = len(equipos.get('LigaBetplay')['Equipos'].keys()) + 1
+        print(contador)
+
     equipo = pedirDatos()  # Obtener datos del equipo
-    eq[str(contador).zfill(2)] = equipo  # Asignar ID al equipo
-    contador += 1  # Incrementar contador para el próximo equipo
+   
+    eq[int(contador)] = equipo
+    
     core.AddData(ligaRoute, {'LigaBetplay': {'Equipos': eq}})
 
-    
+
+
 
 def pedirDatos():
     """
@@ -65,6 +78,8 @@ def pedirDatos():
     name = input("Ingrese el nombre de su equipo: ").strip().lower()  # Pedir el nombre del equipo
     datos = {
         "nombre": name,
+        "jugadores": {},
+        "plantel": {},
         "pj": 0,  # Partidos jugados
         "pg": 0,  # Partidos ganados
         "pp": 0,  # Partidos perdidos
