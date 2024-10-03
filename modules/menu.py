@@ -1,7 +1,7 @@
 # Author: mspg
 
-import Modulos.allMenu as all
-import Modulos.utils.utils as ui
+import modules.allMenu as all
+import modules.utils.utils as ui
 
 def crearMenu():
     """

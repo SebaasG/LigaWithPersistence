@@ -1,7 +1,7 @@
 # Author: mspg
 
-import Modulos.utils.utils as ui
-import Modulos.allMenu as all
+import modules.utils.utils as ui
+import modules.allMenu as all
 
 entrenadores = {}  # Diccionario para almacenar entrenadores
 contador = 1  # Contador global para ID de jugadores y entrenadores

@@ -1,7 +1,7 @@
 # Author: mspg
 
-import Modulos.utils.utils as ut
-import Modulos.allMenu as all
+import modules.utils.utils as ut
+import modules.allMenu as all
 
 contador = 1  # Contador global para la función
 

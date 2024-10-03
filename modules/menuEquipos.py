@@ -1,8 +1,8 @@
 # Author: mspg
 
-import Modulos.allMenu as all
-import Modulos.utils.utils as ut
-import Modulos.utils.core as core
+import modules.allMenu as all
+import modules.utils.utils as ut
+import modules.utils.core as core
 contador = 1  # Contador global para asignar ID a los equipos registrados
 ligaRoute = 'data/torneo.json'
 def subMenuEquipo(equipos: dict):

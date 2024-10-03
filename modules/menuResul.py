@@ -1,7 +1,7 @@
 # Author: mspg
 
-import Modulos.utils.utils as ut  # Importar utilidades para limpiar la consola
-import Modulos.allMenu as all  # Importar los menús disponibles
+import modules.utils.utils as ut  # Importar utilidades para limpiar la consola
+import modules.allMenu as all  # Importar los menús disponibles
 
 # Diccionario global para almacenar los resultados de los partidos
 resultados = {}

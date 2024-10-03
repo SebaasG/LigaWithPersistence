@@ -1,7 +1,7 @@
 
 import os
 import json
-import Modulos.utils.utils as ut
+import modules.utils.utils as ut
 # import Modulos.utils.mensajes as msg
 MY_DATABASE = ''
 

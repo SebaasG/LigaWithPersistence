@@ -1,10 +1,10 @@
-import Modulos.menu as index
-import Modulos.menuEquipos as menuE
-import Modulos.menuPlantel as menuP
-import Modulos.menuPartidos as MenuPar
-import Modulos.menuResul as menuRes
-import Modulos.estadisticas as menuEstad
-import Modulos.utils.core as core
+import modules.menu as index
+import modules.menuEquipos as menuE
+import modules.menuPlantel as menuP
+import modules.menuPartidos as MenuPar
+import modules.menuResul as menuRes
+import modules.estadisticas as menuEstad
+import modules.utils.core as core
 
 def main():
     equipos = {}

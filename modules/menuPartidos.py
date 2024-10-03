@@ -1,7 +1,7 @@
 # Author: mspg
 
-import Modulos.utils.utils as ui
-import Modulos.allMenu as all
+import modules.utils.utils as ui
+import modules.allMenu as all
 from datetime import datetime
 
 contador = 1  # Contador global para asignar ID a los encuentros
