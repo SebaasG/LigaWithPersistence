@@ -11,7 +11,7 @@ def main():
     jugadores = {}
     encuentros = {}
     activeMenu = True
-
+    #hola esto es un comentario
     while activeMenu:
         res = index.crearMenu()  # Mostrar el menú principal
         
